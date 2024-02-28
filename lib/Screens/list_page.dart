@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:moment_dart/moment_dart.dart';
 
 
 class ListPage extends StatefulWidget {
@@ -11,6 +11,7 @@ class ListPage extends StatefulWidget {
 
 class _ListPageState extends State<ListPage> {
   List items=[1,2,3];
+  final now=Moment.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +26,7 @@ class _ListPageState extends State<ListPage> {
         itemCount: items.length,
         itemBuilder: (context,index){
           return Card(
+            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
             semanticContainer: true,
             margin: const EdgeInsets.only(top: 10, bottom: 5, left: 10, right:10),
             color: Colors.grey[60],
@@ -39,7 +41,7 @@ class _ListPageState extends State<ListPage> {
                             style: const TextStyle(
                               fontSize: 15,
                               color: Colors.black,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                             )
                           ),
                           const Text(
@@ -53,7 +55,8 @@ class _ListPageState extends State<ListPage> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Text(
-                                DateFormat('hh:mm aaa d MMM, y').format(DateTime.now()).toString(),
+                                // DateFormat('hh:mm a d Do MMM, y').format(Moment.now()).toString(),
+                                now.format('hh:mm a Do MMM, y').toString(),
                                 style: TextStyle(
                                   letterSpacing: 1.05,
                                   color: Colors.grey[500],
