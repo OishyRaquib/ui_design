@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       color: Colors.white,
       theme: ThemeData(
       
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: const MyHomePage(),
@@ -63,21 +63,25 @@ class MyHomePage extends StatelessWidget {
            const SizedBox(
             height: 10,
            ),
-          ElevatedButton(
-            onPressed: (){},
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.grey.shade800),
-              padding: MaterialStateProperty.all(const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10)),
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))
-            ), 
-            child: const Text(
-              "Let's get started",
-              style: TextStyle(
-                fontSize: 13,
-                color: Colors.white,
+          InkWell(
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ListPage()));
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.grey.shade800),
+                padding: MaterialStateProperty.all(const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))
+              ), 
+              child: const Text(
+                "Let's get started",
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            ),
+              ),
+          ),
           ],
         ),
       ),
