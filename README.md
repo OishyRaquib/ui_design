@@ -1,6 +1,6 @@
 # ui_design
 
-A new Flutter project.
+Task Management UI
 
 ## Getting Started
 
