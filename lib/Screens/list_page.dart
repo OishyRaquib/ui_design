@@ -30,38 +30,41 @@ class _ListPageState extends State<ListPage> {
             color: Colors.grey[60],
             child: Padding(
               padding: const EdgeInsets.only(left: 15,right: 15,top:8, bottom: 8),
-              child: RichText(
-                textAlign: TextAlign.start,
-                  text: TextSpan(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextSpan(
-                        text:"Task ${items[index]}",
-                        style: const TextStyle(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                        )
-                      ),
-                      const TextSpan(
-            
-                        text:"\nYour Personal task management and planning solution for\nplanning your day, week & months\n",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black87,
-                        )
-                      ),
-                      TextSpan(
-                        text: DateFormat('hh:mm aaa d MMM, y').format(DateTime.now()).toString(),
-                        style: TextStyle(
-                          letterSpacing: 1.05,
-                          color: Colors.grey[500],
-                          fontSize: 12,
-                          
-                        ),
-                        
-                      ),
-                    ],
-                  ),
+                          Text(
+                            "Task ${items[index]}",
+                            textAlign: TextAlign.start,
+                            style: const TextStyle(
+                              fontSize: 15,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ),
+                          const Text(
+                            "Your Personal task management and planning solution for\nplanning your day, week & months\n",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black87,
+                            )
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                DateFormat('hh:mm aaa d MMM, y').format(DateTime.now()).toString(),
+                                style: TextStyle(
+                                  letterSpacing: 1.05,
+                                  color: Colors.grey[500],
+                                  fontSize: 12,
+                                  
+                                ),
+                                
+                              ),
+                            ],
+                          ),
+                        ],
                 ),
             ),
           );
